@@ -1,8 +1,8 @@
-# List Repositories of GitHub using Retorfit
+# List Repositories of GitHub using Retrofit
 
 #### Request à API Github
 
-Os request's à [API](https://docs.github.com/en/rest/reference/search#search-repositories) do Github foram realizados através do [Retorfit](https://square.github.io/retrofit/)
+Os request's à [API](https://docs.github.com/en/rest/reference/search#search-repositories) do Github foram realizados através do [Retrofit](https://square.github.io/retrofit/)
 
 #### Como correr o programa?
 
