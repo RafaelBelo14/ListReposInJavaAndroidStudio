@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/repo_background"
+    android:elevation="8dp"
+    android:padding="15dp"
+    android:layout_margin="20dp">
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/icon_project"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="top"
+            android:background="@color/gray"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/name_icon" />
+
+        <TextView
+            android:id="@+id/repoName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/icon_descr"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="top"
+            android:background="@color/gray"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/description_icon" />
+
+        <TextView
+            android:id="@+id/repoDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line2"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/icon_lang"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="top"
+            android:background="@color/gray"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/language_icon" />
+
+        <TextView
+            android:id="@+id/repoLang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/language"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line3"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/icon_owner"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="top"
+            android:background="@color/gray"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/owner_icon" />
+
+        <TextView
+            android:id="@+id/repoOwner"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/owner"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
+
+        <ImageButton
+            android:id="@+id/icon_stars"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="top"
+            android:background="@color/gray"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/stars_icon" />
+
+        <TextView
+            android:id="@+id/repoStars"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/stars"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

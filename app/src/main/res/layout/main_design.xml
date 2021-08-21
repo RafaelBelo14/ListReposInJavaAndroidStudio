@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:padding="15dp"
+        android:gravity="center"
+        android:text="@string/github_repos"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:background="@color/light_blue"/>
+
+    <LinearLayout
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/heading"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/requestTag"
+            android:layout_width="285dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:elevation="8dp"
+            android:hint="@string/type_a_query_for_github"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:background="@drawable/serach_bar_background"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:onClick="searchRepo"
+            android:background="@drawable/button_background"
+            android:src="@drawable/serch_icon"
+            android:contentDescription="@null" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/repositoriesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchBar"
+        android:padding="30dp"
+        android:divider="@color/white"
+        android:dividerHeight="20dp"/>
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/no_repositories_search"
+        android:visibility="invisible" />
+
+    <ProgressBar
+        android:id="@+id/loadingBar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+
+</RelativeLayout>

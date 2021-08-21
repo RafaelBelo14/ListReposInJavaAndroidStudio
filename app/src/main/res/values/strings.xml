@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PinkRoomChallenge</string>
+    <string name="github_repos">GitHub Repos</string>
+    <string name="description">Description</string>
+    <string name="language">Language</string>
+    <string name="owner">Owner</string>
+    <string name="stars">Stars</string>
+    <string name="name">Name</string>
+    <string name="type_a_query_for_github">Type a Query for GitHub!</string>
+    <string name="no_repositories_search">No repositories. Search!</string>
+</resources>
