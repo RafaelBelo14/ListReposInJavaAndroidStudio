@@ -51,12 +51,51 @@
             android:contentDescription="@null" />
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/repositoriesList"
+    <LinearLayout
+        android:id="@+id/repoOrUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/searchBar"
-        android:padding="30dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/buttonUsers"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Users"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:textColor="@color/gray"
+            android:onClick="changeForUsers"
+            android:clickable="true" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/buttonRepos"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Repositories"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:textColor="@color/gray"
+            android:onClick="changeForRepos"
+            android:clickable="true"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/repositoriesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/repoOrUser"
+        android:padding="10dp"
         android:divider="@color/white"
         android:dividerHeight="20dp"/>
 

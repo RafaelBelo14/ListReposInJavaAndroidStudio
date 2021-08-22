@@ -9,6 +9,7 @@
     <color name="black">#FF000000</color>
     <color name="gray">#818181</color>
     <color name="light_blue">#03A9F4</color>
+    <color name="lightissimo_blue">#86D8FD</color>
     <color name="graywhite">#aaaaaa</color>
     <color name="green">#2cb44b</color>
 </resources>

@@ -1,55 +1,76 @@
 package com.example.pinkroomchallenge;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
-public class gitHubRepoAdapter extends ArrayAdapter {
+import java.util.List;
 
-    private final GitHubResponse list;
+public class gitHubRepoAdapter extends RecyclerView.Adapter<gitHubRepoAdapter.ViewHolder> {
 
-    public gitHubRepoAdapter(@NonNull Context context, GitHubResponse list) {
-        super(context, 0);
+    private final Context context;
+    private final List<Repository> list;
+
+    public gitHubRepoAdapter(Context context, List<Repository> list) {
+        this.context = context;
         this.list = list;
     }
 
-    @Override
-    public int getCount() {
-        return list.getRepositoryList().size();
-    }
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView repoName;
+        TextView repoDescription;
+        TextView repoOwner;
+        TextView repoLang;
+        TextView repoStars;
+        RelativeLayout parentLayout;
 
-    @Override
-    public Repository getItem(int pos) {
-        return list.getRepositoryList().get(pos);
+        public ViewHolder(View view) {
+            super(view);
+            repoName = view.findViewById(R.id.repoName);
+            repoDescription = view.findViewById(R.id.repoDescription);
+            repoOwner = view.findViewById(R.id.repoOwner);
+            repoLang = view.findViewById(R.id.repoLang);
+            repoStars = view.findViewById(R.id.repoStars);
+            parentLayout = view.findViewById(R.id.parent_layout);
+        }
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View view, @NonNull ViewGroup parent) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.repo_design, parent, false);
 
-        if (view == null) {
-            view = LayoutInflater.from(getContext()).inflate(R.layout.repo_design, parent, false);
-        }
+        return new ViewHolder(view);
+    }
 
-        TextView repoName = view.findViewById(R.id.repoName);
-        TextView repoDescription = view.findViewById(R.id.repoDescription);
-        TextView repoOwner = view.findViewById(R.id.repoOwner);
-        TextView repoLang = view.findViewById(R.id.repoLang);
-        TextView repoStars = view.findViewById(R.id.repoStars);
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.repoName.setText(list.get(position).getName());
+        holder.repoDescription.setText(list.get(position).getDescription());
+        holder.repoOwner.setText(list.get(position).getOwner().getLogin());
+        holder.repoLang.setText(list.get(position).getLanguage());
+        holder.repoStars.setText(list.get(position).getStars());
 
-        Repository currentRepo = getItem(position);
+        holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("Data: ", "onClick: clicked on: " + list.get(holder.getAdapterPosition()).getName());
+                Toast.makeText(context, list.get(holder.getAdapterPosition()).getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
-        repoName.setText(currentRepo.getName());
-        repoDescription.setText(currentRepo.getDescription());
-        repoOwner.setText(currentRepo.getOwner().getLogin());
-        repoLang.setText(currentRepo.getLanguage());
-        repoStars.setText(currentRepo.getStars());
-
-        return view;
+    @Override
+    public int getItemCount() {
+        return list.size();
     }
 }
