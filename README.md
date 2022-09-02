@@ -2,7 +2,7 @@
 
 #### Github API Requests
 
-All[API](https://docs.github.com/en/rest/reference/search#search-repositories) requests were made using [Retrofit](https://square.github.io/retrofit/)
+All [API](https://docs.github.com/en/rest/reference/search#search-repositories) requests were made using [Retrofit](https://square.github.io/retrofit/)
 
 #### Run program
 
