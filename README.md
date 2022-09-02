@@ -1,15 +1,15 @@
 # List Repositories of GitHub using Retrofit
 
-#### Request à API Github
+#### Github API Requests
 
-Os request's à [API](https://docs.github.com/en/rest/reference/search#search-repositories) do Github foram realizados através do [Retrofit](https://square.github.io/retrofit/)
+All[API](https://docs.github.com/en/rest/reference/search#search-repositories) requests were made using [Retrofit](https://square.github.io/retrofit/)
 
-#### Como correr o programa?
+#### Run program
 
-1. Instalar Android Studio
-2. Fazer download do repositório
-3. Instalar emulador no Android Studio
-4. Correr a app :thumbsup:
+1. Install Android Studio
+2. Download this project
+3. Install an emulator for Android (in Android Studio), or just plug your Android phone
+4. Run the app :thumbsup:
 
 
 
